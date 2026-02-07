@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Chemistry Models</title>
+  <script src="ruffle/ruffle.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f7f7f7;
+    }
+    .player {
+      width: 800px;
+      height: 600px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<h1>Crystal Field & Coordination Chemistry Interactives</h1>
+
+<div id="flash-container" class="player"></div>
+
+<script>
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
+  document.getElementById("flash-container").appendChild(player);
+  player.load("swf/transitionelementsdblock_579367.swf");
+</script>
+
+</body>
+</html>
