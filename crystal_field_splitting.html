@@ -5,30 +5,39 @@
   
   <script src="ruffle/ruffle.js"></script>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #f7f7f7;
-    }
-    .player {
+    /* Remove browser default margins */
+    html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
-      margin: auto;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+
+    /* Container that fills the viewport */
+    #ruffle-container {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Ensure Ruffle player fills container */
+    ruffle-player,
+    embed,
+    object {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
 
+  <div id="ruffle-container"></div>
 
+  <script>
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    document.getElementById("ruffle-container").appendChild(player);
 
-<div id="flash-container" class="player"></div>
-
-<script>
-  const ruffle = window.RufflePlayer.newest();
-  const player = ruffle.createPlayer();
-  document.getElementById("flash-container").appendChild(player);
   player.load("swf/crystalfieldsplitting_142380.swf");
 </script>
 
